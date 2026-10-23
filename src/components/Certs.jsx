@@ -1,4 +1,4 @@
-import { CERTS } from "../data.js";
+import { CERTS, CERT_DRIVE } from "../data.js";
 
 export default function Certs() {
   return (
@@ -9,13 +9,28 @@ export default function Certs() {
         Mobile Programmer (2025).
       </p>
       <div className="grid">
-        {CERTS.map(([name, meta]) => (
-          <div className="card" key={name}>
-            <h3>{name}</h3>
-            <p>{meta}</p>
+        {CERTS.map((c) => (
+          <div className="card" key={c.name}>
+            <h3>{c.name}</h3>
+            <p>{c.meta}</p>
+            {c.file && (
+              <a
+                className="more"
+                href={`https://drive.google.com/file/d/${c.file}/view`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lihat sertifikat
+              </a>
+            )}
           </div>
         ))}
       </div>
+      <p className="certs-cta">
+        <a className="btn p" href={CERT_DRIVE} target="_blank" rel="noopener noreferrer">
+          Lihat semua sertifikat (Google Drive)
+        </a>
+      </p>
     </section>
   );
 }

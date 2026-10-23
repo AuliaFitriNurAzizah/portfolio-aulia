@@ -74,13 +74,21 @@ export const EDUCATION = [
   { school: "SMA Negeri 2 Cilacap", detail: "MIPA (Science), 2020 – 2023", note: "Average score 90.85" },
 ];
 
+// Folder with all certificate files (scan / download).
+export const CERT_DRIVE = "https://drive.google.com/drive/folders/1I_TkJEGZPoUjKU0TqlZlx_BoFJTHyC8R";
+
+// `file` is the Google Drive file id, opened with https://drive.google.com/file/d/<id>/view
 export const CERTS = [
-  ["Junior Mobile Programmer", "BNSP · Jul 2025"],
-  ["Junior Web Developer", "BNSP · Jul 2024"],
-  ["CCNA: Introduction to Networks", "Cisco · Jul 2024"],
-  ["Operating Systems Basics", "Cisco · Jun 2024"],
-  ["Computer Hardware Basics", "Cisco · Sep 2023"],
-  ["Distinction Graduate, Full-Stack Web Developer", "Coding Camp 2026 · DBS Foundation"],
+  { name: "Junior Mobile Programmer", meta: "BNSP · Jul 2025", file: "1S-Xe4KvjrLVJB3VQU4WRMyJGg2FqCa2L" },
+  { name: "Junior Web Developer", meta: "BNSP · Jul 2024", file: "11i_n_9GfznSzYj7E0A0EZx3bOKQnOJTT" },
+  { name: "CCNA: Introduction to Networks", meta: "Cisco · Jul 2024", file: "1Jgf_cEVQ0rc_wQD1bCEYQmY7Ie3P_EV_" },
+  { name: "Operating Systems Basics", meta: "Cisco · Jun 2024", file: "1enxUFVhnLWoVdtmMr9GKUtmXEPE8VAVV" },
+  { name: "Computer Hardware Basics", meta: "Cisco · Sep 2023", file: "10oWrFhezlTNbNee0itukAQbKQjF47Qn7" },
+  {
+    name: "Distinction Graduate, Full-Stack Web Developer",
+    meta: "Coding Camp 2026 · DBS Foundation",
+    file: "1lMNoOZtJvhIX2lR5sQsC6b2AxaFQY8dx",
+  },
 ];
 
 // Add your projects here. Example:
