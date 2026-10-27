@@ -22,7 +22,7 @@ export default function App() {
         <Projects />
         <Contact />
       </main>
-      <footer>© {new Date().getFullYear()} Aulia Fitri Nur Azizah. Built with React and Vite.</footer>
+      <footer>© {new Date().getFullYear()} Aulia Fitri Nur Azizah</footer>
     </>
   );
 }
