@@ -4,7 +4,7 @@ export const PROFILE = {
   name: "Aulia Fitri Nur Azizah",
   intro:
     "Fresh graduate in Informatics Engineering from Politeknik Negeri Cilacap. I build responsive, user-friendly web applications and keep the systems behind them running.",
-  roles: ["Web Developer", "UI/UX Designer", "IT Support", "Full-Stack Learner"],
+  roles: ["Web Developer", "UI/UX Designer", "IT Support", "Full-Stack Developer"],
   photo: "/profile.jpg",
 };
 
