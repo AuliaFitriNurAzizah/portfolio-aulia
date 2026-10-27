@@ -79,9 +79,10 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;margin-b
 .gh p{margin:0;opacity:.8}
 .gh .btn{background:var(--accent2);border-color:var(--accent2);color:#14213d}
 
-.contact{display:flex;flex-wrap:wrap;gap:12px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .contact a{padding:12px 20px;border:1px solid var(--line);background:var(--surface);border-radius:12px;text-decoration:none;font-weight:600}
 .contact a:hover{border-color:var(--accent)}
+.contact span{padding:12px 20px;border:1px solid var(--line);background:var(--surface);border-radius:12px;font-weight:600;color:var(--ink)}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:14px;text-align:center}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
