@@ -5,8 +5,7 @@ export const PROFILE = {
   intro:
     "Fresh graduate in Informatics Engineering from Politeknik Negeri Cilacap. I build responsive, user-friendly web applications and keep the systems behind them running.",
   roles: ["Web Developer", "UI/UX Designer", "IT Support", "Full-Stack Learner"],
-  // Put your photo in /public (for example public/foto.jpg) and set photo: "/foto.jpg"
-  photo: "",
+  photo: "/profile.jpg",
 };
 
 export const SKILLS = {
@@ -91,9 +90,27 @@ export const CERTS = [
   },
 ];
 
-// Add your projects here. Example:
-// { name: "Hospital Website", desc: "Information website for RSI Fatimah Cilacap.", stack: ["PHP", "MySQL"], link: "https://github.com/..." }
-export const PROJECTS = [];
+// Add your projects here.
+export const PROJECTS = [
+  {
+    name: "LAZISNU Cilacap",
+    desc: "Official website for LAZISNU Cilacap (Lembaga Amil Zakat, Infaq dan Shadaqah Nahdlatul Ulama) — providing information, programs, and zakat/infaq services.",
+    stack: ["Web"],
+    link: "https://lazisnucilacap.com/",
+  },
+  {
+    name: "RSI Fatimah Cilacap",
+    desc: "Hospital information website for RSI Fatimah Cilacap to support digital information delivery and services.",
+    stack: ["Web"],
+    link: "https://rsifatimah.com/",
+  },
+  {
+    name: "SafeIN - Adaptive Financial Intelligence",
+    desc: "Adaptive financial intelligence web application with authentication and financial management features.",
+    stack: ["Web", "Vercel"],
+    link: "https://safein-adaptive-financial-intellige.vercel.app/login",
+  },
+];
 
 export const LINKS = [
   ["Email", "mailto:afitrinurazizah@gmail.com"],
