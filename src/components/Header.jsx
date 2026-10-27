@@ -10,7 +10,7 @@ export default function Header({ dark, onToggle }) {
     <header>
       <div className="wrap">
         <nav>
-          <a className="logo" href="#top">Aulia.</a>
+          <a className="logo" href="#top">Aulia's Portfolio</a>
           {NAV.map(([label, id]) => (
             <a className="l" key={id} href={`#${id}`}>{label}</a>
           ))}
