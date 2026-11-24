@@ -1,33 +1,74 @@
-import { PROFILE } from "../data.js";
+import { CERTS, PROFILE, PROJECTS } from "../data.js";
 import { useTyping } from "../hooks.js";
-import Skills from "./Skills.jsx";
+import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Sparkles } from "./Icons.jsx";
+
+const stats = [
+  { label: "GPA", value: "3.51" },
+  { label: "Certifications", value: String(CERTS.length).padStart(2, "0") },
+  { label: "Live projects", value: String(PROJECTS.length).padStart(2, "0") },
+];
 
 export default function Hero() {
   const role = useTyping(PROFILE.roles);
+
   return (
-    <div className="hero">
-      <div>
-        <div className="hero-intro">
-          {PROFILE.photo && (
-            <div className="photo-wrap">
-              <img className="photo" src={PROFILE.photo} alt={PROFILE.name} />
+    <div className="hero-section">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="wrap hero">
+        <div className="hero-copy" data-reveal>
+          <span className="status"><i />Available for new opportunities</span>
+          <h1>{PROFILE.name}</h1>
+          <p className="hero-role">
+            I'm a <span className="gradient-text">{role}</span><span className="caret" />
+          </p>
+          <p className="hero-intro">{PROFILE.intro}</p>
+          <div className="btns">
+            <a className="btn btn-primary" href="#projects">
+              View my work <ArrowUpRight width={17} height={17} />
+            </a>
+            <a className="btn btn-ghost" href="#contact">
+              Get in touch <ArrowRight width={17} height={17} />
+            </a>
+          </div>
+          <dl className="hero-stats">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dd>{stat.value}</dd>
+                <dt>{stat.label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div className="hero-visual" data-reveal>
+          <div className="portrait-card">
+            <div className="portrait-top">
+              <span className="mini-pill">Profile</span>
+              <span className="mini-dots"><i /><i /><i /></span>
             </div>
-          )}
-          <div className="hero-text">
-            <h1>{PROFILE.name}</h1>
-            <div className="role">
-              {role}
-              <span className="caret" />
+            <div className="portrait-photo">
+              <img src={PROFILE.photo} alt={PROFILE.name} />
             </div>
-            <p>{PROFILE.intro}</p>
-            <div className="btns">
-              <a className="btn p" href="#experience">See my experience</a>
-              <a className="btn" href="#contact">Get in touch</a>
+            <div className="portrait-caption">
+              <span className="caption-icon"><MapPin width={17} height={17} /></span>
+              <span className="caption-text">
+                <strong>Based in {PROFILE.location}</strong>
+                <span>Indonesia</span>
+              </span>
             </div>
+          </div>
+          <div className="floating-card">
+            <span className="floating-icon"><Sparkles width={18} height={18} /></span>
+            <span className="caption-text">
+              <strong>Currently focused on</strong>
+              <span>{PROFILE.focus}</span>
+            </span>
           </div>
         </div>
       </div>
-      <Skills />
+      <div className="wrap">
+        <div className="scroll-hint"><span>Scroll to explore</span><ChevronDown width={16} height={16} /></div>
+      </div>
     </div>
   );
 }

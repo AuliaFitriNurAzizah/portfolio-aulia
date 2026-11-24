@@ -1,22 +1,48 @@
 import { EXPERIENCE } from "../data.js";
+import SectionHeading from "./SectionHeading.jsx";
+import { Briefcase, Code, GraduationCap, Users } from "./Icons.jsx";
+
+const kindIcons = {
+  Program: GraduationCap,
+  Internship: Briefcase,
+  Project: Code,
+  Organization: Users,
+};
 
 export default function Experience() {
   return (
-    <section id="experience">
-      <h2>Experience</h2>
-      <p className="lead">Internships, a hospital website project and two student organizations.</p>
-      <ol className="tl">
-        {EXPERIENCE.map((e) => (
-          <li key={e.title + e.org}>
-            <h3>{e.title}</h3>
-            <div className="org">{e.org}</div>
-            <span className="when">{e.date}</span>
-            <ul>
-              {e.points.map((p) => <li key={p}>{p}</li>)}
-            </ul>
-          </li>
-        ))}
-      </ol>
+    <section id="experience" className="section">
+      <div className="wrap split">
+        <div className="split-aside">
+          <SectionHeading
+            eyebrow="Journey"
+            title="Experience"
+            lead="Internships, a hospital website project and student organizations that shaped how I work."
+            aside={<span className="count-pill">{EXPERIENCE.length} roles</span>}
+          />
+        </div>
+        <ol className="tl">
+          {EXPERIENCE.map((item) => {
+            const Icon = kindIcons[item.kind] || Briefcase;
+            return (
+              <li key={item.title + item.org} data-reveal>
+                <span className="tl-marker"><Icon width={19} height={19} /></span>
+                <div className="tl-card">
+                  <div className="tl-top">
+                    <span className="kind">{item.kind}</span>
+                    <span className="when">{item.date}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <div className="org">{item.org}</div>
+                  <ul>
+                    {item.points.map((point) => <li key={point}>{point}</li>)}
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
     </section>
   );
 }

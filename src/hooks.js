@@ -4,6 +4,10 @@ const reduced = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const systemDark = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+
 export function useTyping(words) {
   const [i, setI] = useState(0);
   const [n, setN] = useState(0);
@@ -38,6 +42,14 @@ export function useTheme() {
       return null;
     }
   });
+  const [darkSystem, setDarkSystem] = useState(systemDark);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (event) => setDarkSystem(event.matches);
+    query.addEventListener?.("change", onChange);
+    return () => query.removeEventListener?.("change", onChange);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -45,9 +57,7 @@ export function useTheme() {
     else root.removeAttribute("data-theme");
   }, [theme]);
 
-  const dark = theme
-    ? theme === "dark"
-    : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const dark = theme ? theme === "dark" : darkSystem;
 
   const toggle = () => {
     const next = dark ? "light" : "dark";
@@ -55,9 +65,62 @@ export function useTheme() {
     try {
       localStorage.setItem("theme", next);
     } catch {
-      /* storage unavailable */
+      return;
     }
   };
 
   return { dark, toggle };
+}
+
+export function useActiveSection(ids) {
+  const [active, setActive] = useState(ids[0]);
+  const key = ids.join("|");
+
+  useEffect(() => {
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-25% 0px -65% 0px", threshold: [0, 0.2, 0.6] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [key]);
+
+  return active;
+}
+
+export function useReveal() {
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (!elements.length) return;
+
+    if (!("IntersectionObserver" in window) || reduced()) {
+      elements.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -40px 0px", threshold: 0.12 },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 }

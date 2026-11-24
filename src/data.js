@@ -6,6 +6,8 @@ export const PROFILE = {
     "Fresh graduate in Informatics Engineering from Politeknik Negeri Cilacap. I build responsive, user-friendly web applications and keep the systems behind them running.",
   roles: ["Web Developer", "UI/UX Designer", "IT Support", "Full-Stack Developer"],
   photo: "/profile.jpg",
+  location: "Cilacap, Central Java",
+  focus: "Scalable full-stack applications",
 };
 
 export const SKILLS = {
@@ -21,6 +23,7 @@ export const EXPERIENCE = [
     title: "Full-Stack Web Developer",
     org: "Coding Camp powered by DBS Foundation",
     date: "Feb 2026 – Aug 2026",
+    kind: "Program",
     points: [
       "Learned full-stack web development across frontend and backend.",
       "Built web applications with a focus on functionality, responsiveness and user experience.",
@@ -32,6 +35,7 @@ export const EXPERIENCE = [
     title: "IT Support (IT Division) Intern",
     org: "NU CARE LAZISNU Cilacap",
     date: "Aug 2025 – Dec 2025",
+    kind: "Internship",
     points: [
       "Completed a five-month internship in the IT Division.",
       "Contributed to developing and managing IT-based systems.",
@@ -42,6 +46,7 @@ export const EXPERIENCE = [
     title: "Web Developer",
     org: "RSI Fatimah Cilacap (Teaching Factory)",
     date: "Jul 2024 – May 2025",
+    kind: "Project",
     points: [
       "Member of the TEFA Web Developer team building the hospital website.",
       "Developed and managed the site to support the hospital's digital information delivery.",
@@ -52,6 +57,7 @@ export const EXPERIENCE = [
     title: "Public Relations Division",
     org: "JKB Learning Center",
     date: "Jun 2024 – May 2025",
+    kind: "Organization",
     points: [
       "Coordinated committee members so activities ran smoothly.",
       "Built communication, coordination and responsibility skills through events.",
@@ -61,6 +67,7 @@ export const EXPERIENCE = [
     title: "Public Relations Division",
     org: "PROTIC (Programming Technology Informatics Club)",
     date: "Jun 2024 – Jun 2025",
+    kind: "Organization",
     points: [
       "Kept communication open with members, committees and external parties.",
       "Supported events through publication and coordination.",
