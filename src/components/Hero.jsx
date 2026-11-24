@@ -1,12 +1,6 @@
-import { CERTS, PROFILE, PROJECTS } from "../data.js";
+import { PROFILE } from "../data.js";
 import { useTyping } from "../hooks.js";
-import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Sparkles } from "./Icons.jsx";
-
-const stats = [
-  { label: "GPA", value: "3.51" },
-  { label: "Certifications", value: String(CERTS.length).padStart(2, "0") },
-  { label: "Live projects", value: String(PROJECTS.length).padStart(2, "0") },
-];
+import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Target } from "./Icons.jsx";
 
 export default function Hero() {
   const role = useTyping(PROFILE.roles);
@@ -30,14 +24,6 @@ export default function Hero() {
               Get in touch <ArrowRight width={17} height={17} />
             </a>
           </div>
-          <dl className="hero-stats">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <dd>{stat.value}</dd>
-                <dt>{stat.label}</dt>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <div className="hero-visual" data-reveal>
@@ -58,7 +44,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="floating-card">
-            <span className="floating-icon"><Sparkles width={18} height={18} /></span>
+            <span className="floating-icon"><Target width={18} height={18} /></span>
             <span className="caption-text">
               <strong>Currently focused on</strong>
               <span>{PROFILE.focus}</span>

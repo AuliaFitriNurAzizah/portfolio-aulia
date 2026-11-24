@@ -16,7 +16,6 @@ export default function Projects() {
           eyebrow="Selected work"
           title="Projects"
           lead="A few live projects I've helped build, from organizational websites to a financial app."
-          aside={<span className="count-pill">{PROJECTS.length} live projects</span>}
         />
         <div className="grid">
           {PROJECTS.map((project, index) => (

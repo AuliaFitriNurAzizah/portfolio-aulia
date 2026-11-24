@@ -18,7 +18,6 @@ export default function Experience() {
             eyebrow="Journey"
             title="Experience"
             lead="Internships, a hospital website project and student organizations that shaped how I work."
-            aside={<span className="count-pill">{EXPERIENCE.length} roles</span>}
           />
         </div>
         <ol className="tl">

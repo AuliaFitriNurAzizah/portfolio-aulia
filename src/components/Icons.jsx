@@ -48,6 +48,11 @@ export const MapPin = (props) => (
 export const Award = (props) => (
   <svg {...icon} {...props}><circle cx="12" cy="8" r="6" /><path d="m8.5 13-1.5 8L12 18l5 3-1.5-8" /></svg>
 );
+export const BookOpen = (props) => (
+  <svg {...icon} {...props}>
+    <path d="M12 7v14" /><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3Z" />
+  </svg>
+);
 export const GraduationCap = (props) => (
   <svg {...icon} {...props}>
     <path d="M22 9 12 4 2 9l10 5 10-5Z" /><path d="M6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" />
@@ -62,6 +67,9 @@ export const Users = (props) => (
   <svg {...icon} {...props}>
     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
   </svg>
+);
+export const Target = (props) => (
+  <svg {...icon} {...props}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></svg>
 );
 export const Sparkles = (props) => (
   <svg {...icon} {...props}>

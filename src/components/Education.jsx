@@ -1,6 +1,6 @@
 import { EDUCATION } from "../data.js";
 import SectionHeading from "./SectionHeading.jsx";
-import { GraduationCap, Sparkles } from "./Icons.jsx";
+import { BookOpen, GraduationCap } from "./Icons.jsx";
 
 export default function Education() {
   return (
@@ -25,7 +25,7 @@ export default function Education() {
           ))}
           <div className="card note-card" data-reveal>
             <div className="card-top">
-              <span className="card-icon"><Sparkles width={20} height={20} /></span>
+              <span className="card-icon"><BookOpen width={20} height={20} /></span>
               <span className="card-index">∞</span>
             </div>
             <h3>Always learning</h3>

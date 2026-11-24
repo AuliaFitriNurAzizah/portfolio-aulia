@@ -10,7 +10,6 @@ export default function Certs() {
           eyebrow="Credentials"
           title="Certificates & training"
           lead="Professional certifications and training in web development, mobile development and networking."
-          aside={<span className="count-pill">{CERTS.length} credentials</span>}
         />
         <div className="grid">
           {CERTS.map((cert) => (
