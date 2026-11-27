@@ -7,7 +7,6 @@ export const PROFILE = {
   roles: ["Web Developer", "UI/UX Designer", "IT Support", "Full-Stack Developer"],
   photo: "/profile.jpg",
   location: "Cilacap, Central Java",
-  focus: "Scalable full-stack applications",
 };
 
 export const SKILLS = {
@@ -104,6 +103,12 @@ export const PROJECTS = [
     desc: "Official website for LAZISNU Cilacap (Lembaga Amil Zakat, Infaq dan Shadaqah Nahdlatul Ulama) — providing information, programs, and zakat/infaq services.",
     stack: ["Web"],
     link: "https://lazisnucilacap.com/",
+  },
+  {
+    name: "SIFTNU 2.0",
+    desc: "Sistem Informasi Filantropi Nahdlatul Ulama for NU Care LAZISNU Cilacap — a web platform for digital philanthropy data collection and archiving that supports transparent, accountable, and professional management.",
+    stack: ["Web"],
+    link: "https://siftnu.nucarecilacap.id/",
   },
   {
     name: "RSI Fatimah Cilacap",
