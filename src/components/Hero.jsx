@@ -1,6 +1,6 @@
 import { PROFILE } from "../data.js";
 import { useTyping } from "../hooks.js";
-import { ArrowRight, ArrowUpRight, ChevronDown, MapPin, Target } from "./Icons.jsx";
+import { ArrowRight, ArrowUpRight, ChevronDown, MapPin } from "./Icons.jsx";
 
 export default function Hero() {
   const role = useTyping(PROFILE.roles);
@@ -42,13 +42,6 @@ export default function Hero() {
                 <span>Indonesia</span>
               </span>
             </div>
-          </div>
-          <div className="floating-card">
-            <span className="floating-icon"><Target width={18} height={18} /></span>
-            <span className="caption-text">
-              <strong>Currently focused on</strong>
-              <span>{PROFILE.focus}</span>
-            </span>
           </div>
         </div>
       </div>
